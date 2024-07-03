@@ -1,0 +1,67 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div
+          class="bg-light p-4 p-sm-5 rounded-3 position-relative overflow-hidden"
+        >
+          <figure class="position-absolute top-50 start-50 translate-middle">
+            <svg width="453px" height="211px">
+              <path
+                class="fill-orange"
+                d="M16.002,8.001 C16.002,12.420 12.420,16.002 8.001,16.002 C3.582,16.002 -0.000,12.420 -0.000,8.001 C-0.000,3.582 3.582,-0.000 8.001,-0.000 C12.420,-0.000 16.002,3.582 16.002,8.001 Z"
+              ></path>
+              <path
+                class="fill-warning"
+                d="M176.227,203.296 C176.227,207.326 172.819,210.593 168.614,210.593 C164.409,210.593 161.000,207.326 161.000,203.296 C161.000,199.266 164.409,196.000 168.614,196.000 C172.819,196.000 176.227,199.266 176.227,203.296 Z"
+              ></path>
+            
+            </svg>
+          </figure> 
+          <!-- SVG decoration -->
+         <figure
+            class="position-absolute top-0 end-0 mt-5 me-n5 d-none d-sm-block"
+          >
+            <svg width="190px" height="240px">
+              <path
+                class="fill-info opacity-4"
+                d="M142.500,-0.000 C221.200,-0.000 285.000,60.889 285.000,136.000 C285.000,211.111 221.200,272.000 142.500,272.000 C63.799,272.000 -0.000,211.111 -0.000,136.000 C-0.000,60.889 63.799,-0.000 142.500,-0.000 Z"
+              ></path>
+            </svg>
+          </figure> 
+
+          <div class="col-11 mx-auto position-relative">
+            <div class="row align-items-center">
+              <!-- Title -->
+              <div class="col-12 col-md-12 text-center">
+                <h3 class="mb-3 mb-lg-0 text-primary"><strong>Decouvrir en détails votre demande </strong></h3>
+              </div>
+              
+              <div class="col-md-6 mt-2">
+                  <ul >
+                      <li class="mt-2" ><strong>Date de création :</strong> {{ demande.requestDate | date:'dd-MM-yyyy'}}</li>
+                      <li class="mt-2"><strong>raison : </strong> {{ demande.reason }}</li>
+                      <li class="mt-2">
+                        <strong>Nom de l'agence :</strong> {{demande.agence.nom}}
+                      </li>
+                      <li class="mt-2"><strong> Adresse de l'agence :</strong> {{demande.agence.adresse}}</li>
+                      <li class="mt-2"><strong>Code Postal :</strong> {{demande.agence.codePostal}}</li>
+                    </ul>
+              </div>
+              <div class="col-md-6">
+                  <ul>
+                      <li class="mt-2"><strong>Nom de l'agent :</strong> {{ demande.agent.nom }}</li>
+                      <li class="mt-2"><strong>Prénom de l'agence : </strong> {{ demande.agent.prenom  }}</li>
+                      <li class="mt-2">
+                        <strong>Email :</strong> {{ demande.agent.email }}
+                      </li>
+                      <li class="mt-2"><strong> Status :</strong> {{demande.status }}</li>
+                    </ul>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,457 @@
+<main>
+  <!-- Sidebar END -->
+
+  <!-- Page content START -->
+  <div class="">
+    <!-- Page main content START -->
+    <div class="page-content-wrapper border">
+      <!-- Title -->
+      <div class="row">
+        <div class="col-12 mb-3">
+          <h1 class="h3 mb-2 mb-sm-0">Dashboard</h1>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <!-- Counter item -->
+        <div class="col-md-6 col-xxl-3">
+          <div class="card card-body bg-warning bg-opacity-15 p-4 h-100">
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Digit -->
+              <div>
+                <h2
+                  class="purecounter purecounterAccount mb-0 fw-bold"
+                  data-purecounter-start="0"
+                  [attr.data-purecounter-end]="totaleAcount"
+                  data-purecounter-delay="200"
+                >
+                  0
+                </h2>
+                <span class="mb-0 h6 fw-light">Totale Comptes</span>
+              </div>
+              <!-- Icon -->
+              <div class="icon-lg rounded-circle bg-warning text-white mb-0">
+                <i class="fas fa-tv fa-fw"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Counter item -->
+        <div class="col-md-6 col-xxl-3">
+          <div class="card card-body bg-purple bg-opacity-10 p-4 h-100">
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Digit -->
+              <div>
+                <h2
+                  class="purecounter purecounterClient mb-0 fw-bold"
+                  data-purecounter-start="0"
+                  [attr.data-purecounter-end]="totaleClient"
+                  data-purecounter-delay="200"
+                >
+                  0
+                </h2>
+                <span class="mb-0 h6 fw-light">Nombre Totale des clients</span>
+              </div>
+              <!-- Icon -->
+              <div class="icon-lg rounded-circle bg-purple text-white mb-0">
+                <i class="fas fa-user-tie fa-fw"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Counter item -->
+        <div class="col-md-6 col-xxl-3">
+          <div class="card card-body bg-primary bg-opacity-10 p-4 h-100">
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Digit -->
+              <div>
+                <h2
+                  class="purecounter purecounterAgents mb-0 fw-bold"
+                  data-purecounter-start="0"
+                  [attr.data-purecounter-end]="totaleAgent"
+                  data-purecounter-delay="200"
+                ></h2>
+                <span class="mb-0 h6 fw-light">Nombre Totale des Agents</span>
+              </div>
+              <!-- Icon -->
+              <div class="icon-lg rounded-circle bg-primary text-white mb-0">
+                <i class="fas fa-user-graduate fa-fw"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Counter item -->
+        <div class="col-md-6 col-xxl-3">
+          <div class="card card-body bg-success bg-opacity-10 p-4 h-100">
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Digit -->
+              <div>
+                <div class="d-flex">
+                  <h2
+                    class="purecounter purecounterAgence mb-0 fw-bold"
+                    data-purecounter-start="0"
+                    [attr.data-purecounter-end]="totaleAgence"
+                    data-purecounter-delay="200"
+                  ></h2>
+                  <span class="mb-0 h2 ms-1"> </span>
+                </div>
+                <span class="mb-0 h6 fw-light">Nombre Totale des Agences </span>
+              </div>
+              <!-- Icon -->
+              <div class="icon-lg rounded-circle bg-success text-white mb-0">
+                <i class="bi bi-stopwatch-fill fa-fw"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-statistique-compte-agence></app-statistique-compte-agence>
+      <!-- Counter boxes END -->
+      <div class="">
+        <section class="p-0 d-flex position-relative overflow-hidden">
+          <div class="container-fluid">
+            <div class="row">
+              <!-- left -->
+              <div
+                class="col-12 col-lg-6 d-md-flex align-items-center justify-content-center bg-primary bg-opacity-10 vh-lg-100"
+              >
+                <div class="p-3 p-lg-5">
+                  <!-- Title -->
+                  <div class="text-center">
+                    <h2 class="fw-bold">
+                      Bienvenue dans la section de statistiques...
+                    </h2>
+                    <p class="mb-0 h6 fw-light">
+                      Commencer et comparer la productivités des Agent !!
+                    </p>
+                  </div>
+                  <!-- SVG Image -->
+                  <img src="assets/images/element/02.svg" class="mt-5" alt="" />
+                  <!-- Info -->
+                  <div
+                    class="d-sm-flex mt-5 align-items-center justify-content-center"
+                  >
+                    <ul class="avatar-group mb-2 mb-sm-0">
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="avatar-img rounded-circle"
+                          src="assets/images/avatar/01.jpg"
+                          alt="avatar"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="avatar-img rounded-circle"
+                          src="assets/images/avatar/02.jpg"
+                          alt="avatar"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="avatar-img rounded-circle"
+                          src="assets/images/avatar/03.jpg"
+                          alt="avatar"
+                        />
+                      </li>
+                      <li class="avatar avatar-sm">
+                        <img
+                          class="avatar-img rounded-circle"
+                          src="assets/images/avatar/04.jpg"
+                          alt="avatar"
+                        />
+                      </li>
+                    </ul>
+                    <!-- Content -->
+                    <p class="mb-0 h6 fw-light ms-0 ms-sm-3">
+                      4k+ Agents dans Biat.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Right -->
+              <div class="col-12 col-lg-6 d-flex justify-content-center">
+                <div class="row my-5">
+                  <div class="col-sm-10 col-xl-12 m-auto">
+                    <!-- Title -->
+                    <span class="mb-0 fs-1">🤔</span>
+                    <h1 class="fs-2">Qui est Meilleur que l'autre ?</h1>
+                    <h5 class="fw-light mb-4">
+                      Chosir les deux Agent à comparer
+                    </h5>
+
+                    <!-- Form START -->
+                    <form>
+                      <!-- Email -->
+                      <div class="mb-4">
+                        <label for="exampleSelect" class="form-label"
+                          >Choisir l'agence*</label
+                        >
+                        <div class="input-group input-group-lg">
+                          <span
+                            class="input-group-text bg-light rounded-start border-0 text-secondary px-3"
+                          >
+                            <i class="bi bi-list-ul"></i>
+                          </span>
+                          <select
+                            (change)="onAgenceChange($event)"
+                            class="form-control border-0 bg-light rounded-end ps-1"
+                            id="exampleSelect"
+                          >
+                            <option value="">Selectionner l'agence</option>
+                            <option
+                              *ngFor="let option of listeAgence"
+                              [value]="option.id"
+                            >
+                              {{ option.nom }}
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="mb-4">
+                        <label for="exampleSelect" class="form-label"
+                          >Choisir l'agent numero 1 *</label
+                        >
+                        <div class="input-group input-group-lg">
+                          <span
+                            class="input-group-text bg-light rounded-start border-0 text-secondary px-3"
+                          >
+                            <i class="bi bi-list-ul"></i>
+                          </span>
+                          <select
+                            (change)="onAgentOneChange($event)"
+                            class="form-control border-0 bg-light rounded-end ps-1"
+                            id="exampleSelect"
+                          >
+                            <option value="">Choisir le premier agent</option>
+                            <option
+                              *ngFor="let option of listAgents"
+                              [value]="option.id"
+                            >
+                              {{ option.nom }}
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="mb-4">
+                        <label for="exampleSelect" class="form-label"
+                          >XChoisir le deusiéme agent *</label
+                        >
+                        <div class="input-group input-group-lg">
+                          <span
+                            class="input-group-text bg-light rounded-start border-0 text-secondary px-3"
+                          >
+                            <i class="bi bi-list-ul"></i>
+                          </span>
+                          <select
+                            (change)="onAgentSecondChange($event)"
+                            class="form-control border-0 bg-light rounded-end ps-1"
+                            id="exampleSelect"
+                          >
+                            <option value="">Select an option</option>
+                            <option
+                              *ngFor="let option of listAgents"
+                              [value]="option.id"
+                            >
+                              {{ option.nom }}
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <!-- Button -->
+                      <div class="align-items-center">
+                        <div class="d-grid">
+                          <button
+                            class="btn btn-primary mb-0"
+                            type="button"
+                            (click)="lancerComparaison()"
+                          >
+                            Lancer Comparaison
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                    <!-- Form END -->
+                  </div>
+                </div>
+                <!-- Row END -->
+              </div>
+            </div>
+            <!-- Row END -->
+          </div>
+        </section>
+
+        <div class="row" *ngIf="showMe">
+          <div class="col-md-12 mt-5">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="text-center">
+                  Nombre des comptes crée par chaque agent par rapport le nombre
+                  totale des comptes dans l'agence spécifié
+                </h2>
+                <canvas id="myChart" class="chart-canvas"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Chart and Ticket START -->
+      <div class="row g-4 mb-4 mt-5">
+        <!-- Chart START -->
+        <div class="col-xxl-8">
+          <div class="card shadow h-100">
+            <!-- Card header -->
+            <div class="card-header p-4 border-bottom">
+              <h5 class="card-header-title">Earnings</h5>
+            </div>
+
+            <!-- Card body -->
+            <div class="card-body">
+              <!-- Apex chart -->
+              <div id="ChartPayout"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Chart END -->
+
+        <!-- Ticket START -->
+        <div class="col-xxl-4">
+          <div class="card shadow h-100">
+            <!-- Card header -->
+            <div
+              class="card-header border-bottom d-flex justify-content-between align-items-center p-4"
+            >
+              <h5 class="card-header-title">Support Requests</h5>
+              <a href="#" class="btn btn-link p-0 mb-0">View all</a>
+            </div>
+
+            <!-- Card body START -->
+            <div class="card-body p-4">
+              <!-- Ticket item START -->
+              <div class="d-flex justify-content-between position-relative">
+                <div class="d-sm-flex">
+                  <!-- Avatar -->
+                  <div class="avatar avatar-md flex-shrink-0">
+                    <img
+                      class="avatar-img rounded-circle"
+                      src="assets/images/avatar/09.jpg"
+                      alt="avatar"
+                    />
+                  </div>
+                  <!-- Info -->
+                  <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
+                    <h6 class="mb-0">
+                      <a href="#" class="stretched-link">Lori Stevens</a>
+                    </h6>
+                    <p class="mb-0">
+                      New ticket #759 from Lori Stevens for General Enquiry
+                    </p>
+                    <span class="small">8 hour ago</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Ticket item END -->
+
+              <hr />
+              <!-- Divider -->
+
+              <!-- Ticket item START -->
+              <div class="d-flex justify-content-between position-relative">
+                <div class="d-sm-flex">
+                  <!-- Avatar -->
+                  <div class="avatar avatar-md flex-shrink-0">
+                    <div
+                      class="avatar-img rounded-circle bg-purple bg-opacity-10"
+                    >
+                      <span
+                        class="text-purple position-absolute top-50 start-50 translate-middle fw-bold"
+                        >DB</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Info -->
+                  <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
+                    <h6 class="mb-0">
+                      <a href="#" class="stretched-link">Dennis Barrett</a>
+                    </h6>
+                    <p class="mb-0">
+                      Comment from Billy Vasquez on ticket #659
+                    </p>
+                    <span class="small">8 hour ago</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Ticket item END -->
+
+              <hr />
+              <!-- Divider -->
+
+              <!-- Ticket item START -->
+              <div class="d-flex justify-content-between position-relative">
+                <div class="d-sm-flex">
+                  <!-- Avatar -->
+                  <div class="avatar avatar-md flex-shrink-0">
+                    <div
+                      class="avatar-img rounded-circle bg-orange bg-opacity-10"
+                    >
+                      <span
+                        class="text-orange position-absolute top-50 start-50 translate-middle fw-bold"
+                        >WB</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Info -->
+                  <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
+                    <h6 class="mb-0">
+                      <a href="#" class="stretched-link">Dennis Barrett</a>
+                    </h6>
+                    <p class="mb-0">
+                      <b>Webestica</b> assign you a new ticket for
+                      <b>Eduport theme</b>
+                    </p>
+                    <span class="small">5 hour ago</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Ticket item END -->
+
+              <hr />
+              <!-- Divider -->
+
+              <!-- Ticket item START -->
+              <div class="d-flex justify-content-between position-relative">
+                <div class="d-sm-flex">
+                  <!-- Avatar -->
+                  <div class="avatar avatar-md flex-shrink-0">
+                    <img
+                      class="avatar-img rounded-circle"
+                      src="assets/images/avatar/04.jpg"
+                      alt="avatar"
+                    />
+                  </div>
+                  <!-- Info -->
+                  <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
+                    <h6 class="mb-0">
+                      <a href="#" class="stretched-link">Dennis Barrett</a>
+                    </h6>
+                    <p class="mb-0">Thanks for contact us with your issues.</p>
+                    <span class="small">9 hour ago</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Ticket item END -->
+            </div>
+            <!-- Card body END -->
+          </div>
+        </div>
+        <!-- Ticket END -->
+      </div>
+    </div>
+    <canvas id="myBarChart" class="chart-canvas"></canvas>
+    <!-- Page main content END -->
+  </div>
+  <!-- Page content END -->
+</main>

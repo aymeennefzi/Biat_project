@@ -1,0 +1,175 @@
+<main>
+  <section
+    class="p-0 d-flex align-items-center position-relative overflow-hidden"
+  >
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left -->
+        <div
+          class="col-12 col-lg-5 d-md-flex align-items-center justify-content-center bg-primary bg-opacity-10 vh-lg-100"
+        >
+          <div class="p-3 p-lg-5">
+            <!-- Title -->
+
+            <img
+              src="assets/images/avatar/Update-rafiki.png"
+              class="mt-5"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="col-12 col-lg-7 m-auto">
+          <div class="row my-5">
+            <div class="col-sm-10 col-xl-8 m-auto">
+              <!-- Title -->
+              <img
+                src="assets/images/element/03.svg"
+                class="h-40px mb-2"
+                alt=""
+              />
+              <h2>Modifier une Agence !</h2>
+
+              <form
+                [formGroup]="AjouterAgenceForm"
+                (ngSubmit)="modifierAgence()"
+              >
+                <div class="row">
+                  <div class="mb-4 col-12 col-md-6 p-2">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Email address *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <input
+                        type="email"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="E-mail"
+                        id="exampleInputEmail1"
+                        formControlName="email"
+                      />
+                    </div>
+                  </div>
+                  <!-- Password -->
+                  <div class="mb-4 col-12 col-md-6 p-2">
+                    <label for="inputPassword5" class="form-label"
+                      >adresse *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <input
+                        formControlName="adresse"
+                        type="text"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="Technopole ghazella"
+                        id="inputPassword5"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="mb-4 col-12 col-md-6 p-2">
+                    <label for="inputPassword6" class="form-label"
+                      >ville *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="Ariana"
+                        id="inputPassword6"
+                        formControlName="ville"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-4 col-12 col-md-6 p-2">
+                    <label for="inputPassword6" class="form-label"
+                      >Nom d'agence *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="Agence Ariana"
+                        id="inputPassword6"
+                        formControlName="nom"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="mb-4 col-12 col-md-6 p-2">
+                    <label for="inputPassword6" class="form-label"
+                      >Téléphone *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="+216 93 365 245"
+                        id="inputPassword6"
+                        formControlName="telephone"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-4 col-12 col-md-6 p-2">
+                    <label for="inputPassword6" class="form-label">Fax *</label>
+                    <div class="input-group input-group-lg">
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="77 403 422"
+                        id="inputPassword6"
+                        formControlName="fax"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-4 col-12 p-2">
+                  <label for="inputPassword6" class="form-label"
+                    >Code Postale</label
+                  >
+                  <div class="input-group input-group-lg">
+                    <input
+                      type="text"
+                      class="form-control border-0 bg-light rounded-end ps-1"
+                      placeholder="8080"
+                      id="inputPassword6"
+                      formControlName="codePostal"
+                    />
+                  </div>
+                </div>
+                <!-- Button -->
+                <div class="align-items-center mt-0">
+                  <div class="d-grid">
+                    <button class="btn btn-primary mb-0" type="submit">
+                      Modifier agence
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <div class="mt-4 text-center">
+                <span
+                  >Crrer nouvgelle agence?<a href="admin/ajouter-agence">
+                    Ajouter nouvelle agence</a
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- Back to top -->
+<div class="back-top">
+  <i
+    class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"
+  ></i>
+</div>

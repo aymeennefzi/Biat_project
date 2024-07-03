@@ -1,0 +1,17 @@
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Align buttons to the right */
+    gap: 10px; /* Space between buttons */
+  }
+  
+  .btn-annuler {
+    background-color: rgb(230, 228, 228);
+    color: white;
+  }
+  
+  .btn-inscrire {
+    background-color: rgb(255, 196, 2);
+    color: white;
+  }
+  

@@ -1,0 +1,95 @@
+<div class="row mb-3">
+    <div class="col-12 d-sm-flex justify-content-between align-items-center">
+        <h1 class="h3 mb-2 mb-sm-0">Liste des comptes</h1>
+        <a class="btn btn-sm btn-primary-soft mb-0" href="agent/Add_account" >Ajouter comptes</a>
+    </div>
+</div>
+<div class="card bg-transparent border">
+    <div class="card-header bg-light border-bottom">
+        <div class="row g-3 align-items-center justify-content-between">
+            <div class="col-md-12">
+                <form class="rounded position-relative">
+                    <input
+                    class="form-control bg-transparent"
+                    name="rechercheUniversite"
+                    type="search"
+                    placeholder="Entrez le id du compte"
+                    aria-label="Search"
+                    />
+                    <button
+                    class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+                    type="submit"
+                    >
+                    <i class="fas fa-search fs-6"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+<div class="card-body">
+    <!-- Table START -->
+    <div class="table-responsive border-0 rounded-3">
+      <table
+        class="table table-dark-gray align-middle p-4 mb-0 table-hover"
+      >
+        <!-- Table head -->
+        <thead>
+          <tr>
+            <th scope="col" class="border-0 ">Nom</th>
+            <th scope="col" class="border-0 ">Prénom</th>
+            <th scope="col" class="border-0 ">Numéro de Compte</th>
+            <th scope="col" class="border-0">TypeCompte</th>
+            <th scope="col" class="border-0">Solde</th>
+            <th scope="col" class="border-0">Date de création</th>
+            <th scope="col" class="border-0 rounded-end">Action</th>
+          </tr>
+        </thead>
+        <!-- Table body START -->
+        <tbody *ngIf="ListofAccount.length > 0; else noData" >
+          <tr  *ngFor="let compte of ListofAccount">
+            <td>
+              <h4 class="table-responsive-title mb-0">{{compte.client.nom}}</h4>
+            </td>
+            <td>
+              <h4 class="table-responsive-title mb-0">{{compte.client.prenom}}</h4>
+            </td>
+            <td>
+              <h4 class="table-responsive-title mb-0">{{compte.numeroCompte}}</h4>
+            </td>
+            <td>
+              <h4 class="table-responsive-title mb-0">{{compte.typeCompte}}</h4>
+            </td>
+            <td>
+              <h4 class="table-responsive-title mb-0">{{compte.solde}}</h4>
+            </td>
+            <td>
+              <h4 class="table-responsive-title mb-0">{{compte.dateCreation}}</h4>
+            </td>
+            <td>
+              <a
+                    (click)="voirDetails(compte.id)"
+                    class="btn btn-info-soft btn-round me-1 mb-1 mb-md-0"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title=""
+                    data-bs-original-title="Voir les détails"
+                  >
+                    <i class="bi bi-eye"></i>
+                  </a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot *ngIf="ListofAccount.length === 0">
+          <tr>
+            <td colspan="9">
+              <div class="alert alert-secondary text-center my-4" role="alert">
+                Aucun compte disponible pour le moment...
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+        <!-- Table body END -->
+      </table>
+    </div>
+    <!-- Table END -->
+  </div>

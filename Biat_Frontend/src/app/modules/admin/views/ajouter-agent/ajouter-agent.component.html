@@ -1,0 +1,297 @@
+<main>
+  <section
+    class="p-0 d-flex align-items-center position-relative overflow-hidden"
+  >
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-lg-11 m-auto">
+          <div class="row justify-content-center align-items-center my-5">
+            <!-- Title -->
+            <div class="text-center">
+              <img
+                src="assets/images/element/03.svg"
+                class="h-40px mb-2"
+                alt=""
+              />
+              <h2>Créez nouveau agent !</h2>
+              <p class="lead mb-4">
+                Ravi de vous voir! Veuillez vous ajouter un nouveau Ajents.
+              </p>
+            </div>
+
+            <div class="col-sm-12 col-xl-11">
+              <!-- Form START -->
+              <form [formGroup]="registerForm" (ngSubmit)="register()">
+                <!-- Nom -->
+                <div class="row">
+                  <div class="mb-4 col-12 col-md-4">
+                    <label for="exampleInputNom" class="form-label"
+                      >Nom *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <span
+                        class="input-group-text bg-light rounded-start border-0 text-secondary px-3"
+                        ><i class="fas fa-user-graduate"></i
+                      ></span>
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="Nom"
+                        id="exampleInputNom"
+                        formControlName="nom"
+                      />
+                      <span
+                        class="text text-danger"
+                        *ngIf="
+                          registerForm.controls['nom'].invalid &&
+                          registerForm.controls['nom'].touched
+                        "
+                        >First Name is required and</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Prénom -->
+                  <div class="mb-4 col-12 col-md-4">
+                    <label for="exampleInputPrenom" class="form-label"
+                      >Prénom *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <span
+                        class="input-group-text bg-light rounded-start border-0 text-secondary px-3"
+                        ><i class="fas fa-user-graduate"></i
+                      ></span>
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="Prénom"
+                        id="exampleInputPrenom"
+                        formControlName="prenom"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Cin -->
+                  <div class="mb-4 col-12 col-md-4">
+                    <label for="exampleInputCin" class="form-label"
+                      >Carte d'identité nationale *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <span
+                        class="input-group-text bg-light rounded-start border-0 text-secondary px-3"
+                        ><i class="fas fa-address-card"></i
+                      ></span>
+                      <input
+                        type="number"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="Carte d'identité nationale"
+                        id="exampleInputCin"
+                        formControlName="cin"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="mb-4 col-12 col-md-4">
+                    <!-- DateNaissance -->
+
+                    <label for="exampleInputDateNaissance" class="form-label"
+                      >Date de naissance *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <span
+                        class="input-group-text bg-light rounded-start border-0 text-secondary px-3"
+                        ><i class="fas fa-calendar-alt"></i
+                      ></span>
+                      <input
+                        type="date"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="Date de naissance"
+                        id="exampleInputDateNaissance"
+                        formControlName="dateNaissance"
+                      />
+                    </div>
+                  </div>
+                  <!-- Image -->
+                  <div class="mb-4 col-12 col-md-4">
+                    <label for="exampleInputImage" class="form-label"
+                      >Photo de profil *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <span
+                        class="input-group-text bg-light rounded-start border-0 text-secondary px-3"
+                        ><i class="fas fa-file-image"></i
+                      ></span>
+                      <input
+                        type="file"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        id="exampleInputImage"
+                        (change)="onFileSelected($event)"
+                      />
+                    </div>
+                  </div>
+                  <!-- Ecole -->
+                  <div class="mb-4 col-12 col-md-4">
+                    <label for="exampleInputPhone" class="form-label"
+                      >Numéro de téléphone *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <span
+                        class="input-group-text bg-light rounded-start border-0 text-secondary px-3"
+                      >
+                        <i class="fas fa-phone"></i>
+                      </span>
+                      <input
+                        type="tel"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="Numéro de téléphone"
+                        id="exampleInputPhone"
+                        formControlName="numeroTelephone"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="mb-4 col-12 col-md-1"></div>
+                  <div class="mb-4 col-12 col-md-5">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Adresse e-mail *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <span
+                        class="input-group-text bg-light rounded-start border-0 text-secondary px-3"
+                        ><i class="bi bi-envelope-fill"></i
+                      ></span>
+                      <input
+                        type="email"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="E-mail"
+                        id="exampleInputEmail1"
+                        formControlName="email"
+                      />
+                    </div>
+                  </div>
+                  <!-- Password -->
+                  <div class="mb-4 col-12 col-md-5">
+                    <label for="inputPassword5" class="form-label"
+                      >Mot de passe *</label
+                    >
+                    <div class="input-group input-group-lg">
+                      <span
+                        class="input-group-text bg-light rounded-start border-0 text-secondary px-3"
+                        ><i class="fas fa-lock"></i
+                      ></span>
+                      <input
+                        type="password"
+                        class="form-control border-0 bg-light rounded-end ps-1"
+                        placeholder="*********"
+                        id="inputPassword5"
+                        formControlName="password"
+                      />
+                      <span
+                        class="input-group-text bg-light rounded-start border-0 text-secondary px-3"
+                        onclick="Changer()"
+                        ><i class="far fa-eye cursor-pointer p-2 w-40px"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Button -->
+                <div
+                  class="row mx-1 justify-content-center align-items-center d-flex p-2" >
+                  <div class="col-12 col-md-2"></div>
+                  <div class="col-12 ms-5 col-md-2 mb-md-0">
+                    <button class="btn btn-primary" type="submit">
+                      Inscrire
+                    </button>
+                  </div>
+                  <div class="col-12 col-md-2 mb-2 mx-0 mb-md-0">
+                    <button
+                      class="btn btn-danger"
+                      type="button"
+                      (click)="Clear()"
+                    >
+                      Annuler
+                    </button>
+                  </div>
+                  <div class="col-12 col-md-2"></div>
+                </div>
+              </form>
+              <!-- Form END -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================
+Footer START -->
+<footer class="pt-5">
+  <div class="container">
+    <!-- Row START -->
+    <div class="row g-4">
+      <!-- Widget 1 START -->
+      <div class="col-lg-12">
+        <!-- logo -->
+        <a
+          class="me-0 d-lg-flex justify-content-center align-items-cente"
+          href="index.html"
+        >
+          <img
+            class="light-mode-item rounded-circle h-70px img-fluid"
+            src="assets/images/avatar/biat.jpg"
+            alt="logo"
+          />
+        </a>
+        <!-- Social media icon -->
+        <ul
+          class="list-inline mb-0 mt-3 d-lg-flex justify-content-center align-items-cente"
+        >
+          <br /><br />
+          <li class="list-inline-item">
+            <a class="btn btn-white btn-sm shadow px-2 text-facebook" href="#"
+              ><i class="fab fa-fw fa-facebook-f"></i
+            ></a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn btn-white btn-sm shadow px-2 text-instagram" href="#"
+              ><i class="fab fa-fw fa-instagram"></i
+            ></a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn btn-white btn-sm shadow px-2 text-twitter" href="#"
+              ><i class="fab fa-fw fa-twitter"></i
+            ></a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn btn-white btn-sm shadow px-2 text-linkedin" href="#"
+              ><i class="fab fa-fw fa-linkedin-in"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <!-- Widget 1 END -->
+    </div>
+
+    <!-- Divider -->
+    <hr class="mt-4 mb-0" />
+
+    <!-- Bottom footer -->
+    <div class="py-3">
+      <div class="container px-0">
+        <div
+          class="d-lg-flex justify-content-center align-items-center py-3 text-center text-md-left"
+        >
+          <!-- copyright text -->
+          <div class="text-body text-primary-hover">Copyrights ©2024 BIAT.</div>
+          <div class="text-body text-primary-hover">Made by Nada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- =======================
+Footer END -->

@@ -1,0 +1,168 @@
+<!-- Header START -->
+<header class="navbar-light navbar-sticky"></header>
+<!-- Header END -->
+<main>
+  <!-- =======================
+  Page Banner START -->
+  <section class="pt-0">
+    <!-- Main banner background image -->
+    <div class="px-0">
+      <div
+        class="bg-primary h-100px h-md-200px rounded-0"
+        style="
+          background: url(assets/images/pattern/04.png) no-repeat center center;
+          background-size: cover;
+        "
+      ></div>
+    </div>
+    <div class="container mt-n4">
+      <div class="row">
+        <!-- Profile banner START -->
+        <div class="col-12">
+          <div class="card bg-transparent card-body p-0">
+            <div class="row d-flex justify-content-between">
+              <!-- Avatar -->
+              <div class="col-auto mt-4 mt-md-0">
+                <div class="avatar avatar-xxl mt-n3">
+                  <img
+                    class="avatar-img rounded-circle border border-white border-3 shadow"
+                    src="http://localhost:8089/biat/auth/{{
+                      userconnect.image
+                    }}"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div
+                class="col d-md-flex justify-content-between align-items-center mt-4"
+              >
+                <div>
+                  <h1 class="my-1 fs-4">
+                    {{ userconnect.nom }} {{ userconnect.prenom }}
+                    <i class="bi bi-patch-check-fill text-info small"></i>
+                  </h1>
+                  <h6 class="role-display my-1">
+                    {{ userconnect.role }}
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="d-xl-none" />
+          <div
+            class="col-12 col-xl-3 d-flex justify-content-between align-items-center"
+          >
+            <a class="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
+            <button
+              class="btn btn-primary d-xl-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasSidebar"
+              aria-controls="offcanvasSidebar"
+            >
+              <i class="fas fa-sliders-h"></i>
+            </button>
+          </div>
+          <!-- Advanced filter responsive toggler END -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pt-0">
+    <div class="container">
+      <div class="row">
+        <!-- Left sidebar START -->
+        <div class="col-xl-3">
+          <!-- Responsive offcanvas body START -->
+          <div
+            class="offcanvas-xl offcanvas-end"
+            tabindex="-1"
+            id="offcanvasSidebar"
+          >
+            <!-- Offcanvas header -->
+            <div class="offcanvas-header bg-light">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                Mon profil
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                data-bs-target="#offcanvasSidebar"
+                aria-label="Close"
+              ></button>
+            </div>
+            <!-- Offcanvas body -->
+            <div class="offcanvas-body p-3 p-xl-0">
+              <div class="bg-dark border rounded-3 pb-0 p-3 w-100">
+                <!-- Dashboard menu -->
+                <div class="list-group list-group-dark list-group-borderless">
+                  <a class="list-group-item" routerLink="Liste_des_Demande"
+                    ><i class="fas fa-address-card fa-fw me-2"></i>Mes
+                    demandes</a
+                  >
+                  <a class="list-group-item" routerLink="solde"
+                    ><i class="fas fa-city fa-fw me-2"></i>Mon solde</a
+                  >
+                  <a
+                    class="list-group-item text-danger bg-danger-soft-hover"
+                    (click)="logout()"
+                    routerLink="/home"
+                    ><i class="fas fa-sign-out-alt fa-fw me-2"></i>Se
+                    déconnecter</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Responsive offcanvas body END -->
+        </div>
+        <!-- Left sidebar END -->
+
+        <!-- Main content START -->
+        <div class="col-xl-9">
+          <router-outlet></router-outlet>
+        </div>
+        <!-- Main content END -->
+      </div>
+      <!-- Row END -->
+    </div>
+  </section>
+</main>
+
+<footer class="bg-dark p-3">
+  <div class="row align-items-center">
+    <!-- Widget -->
+    <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+      <!-- Logo START -->
+      <a href="index.html">
+        <img class="h-20px" src="assets/images/avatar/e.jpg" alt="logo" />
+      </a>
+    </div>
+
+    <!-- Widget -->
+    <div class="col-md-4 mb-3 mb-md-0">
+      <div class="text-center text-white text-primary-hover">
+        Copyrights ©2024.Biat Nada
+      </div>
+    </div>
+    <!-- Widget -->
+    <div class="col-md-4">
+      <!-- Rating -->
+      <ul class="list-inline mb-0 text-center text-md-end">
+        <li class="list-inline-item ms-2">
+          <a href="#"><i class="text-white fab fa-facebook"></i></a>
+        </li>
+        <li class="list-inline-item ms-2">
+          <a href="#"><i class="text-white fab fa-instagram"></i></a>
+        </li>
+        <li class="list-inline-item ms-2">
+          <a href="#"><i class="text-white fab fa-linkedin-in"></i></a>
+        </li>
+        <li class="list-inline-item ms-2">
+          <a href="#"><i class="text-white fab fa-twitter"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,47 @@
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form >
+      <ng-template matStepLabel>Ajouter demande</ng-template>
+      <div class="text-center">
+          <img
+            src="./../../../../../assets/images/Invite-pana.png"
+            class="h-100px mb-2"
+            alt=""
+          />
+          <h2>Créez une nouvelle demande !</h2>
+          <p class="lead mb-4">
+            Ravi de vous voir! Veuillez vous ajouter une nouvelle demande.
+          </p>
+        </div>
+      <div>
+      <div class="button-container">
+        <button mat-button matStepperNext class="btn-inscrire" >Suivant</button>
+      </div>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Détails principale">
+    <form [formGroup]="demandeForm" (ngSubmit)="ajouterDemande()" >
+      <div class="row">
+          <div class="mb-4 col-12 col-md-6">
+              <label for="exampleInputNom" class="form-label">Raison *</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="fas fa-user-graduate"></i></span>
+                <input type="text" class="form-control border-0 bg-light rounded-end ps-1" placeholder="Ecrire ici ..." id="exampleInputNom" formControlName="reason" />
+              </div>
+          </div>
+          <div class="mb-4 col-12 col-md-6">
+              <label for="exampleInputNom" class="form-label">Date de Création *</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="fas fa-user-graduate"></i></span>
+                <input type="date" class="form-control border-0 bg-light rounded-end ps-1" placeholder="Nom" id="exampleInputNom" formControlName="requestDate" readonly/>
+              </div>
+          </div>   
+      </div>
+      <div class="button-container">
+          <button mat-button matStepperNext class="btn-annuler" >Annuler</button>
+          <button mat-button matStepperPrevious class="btn-inscrire" type="submit">Ajouter</button>
+      </div>                  
+  </form>
+  </mat-step>
+</mat-stepper>

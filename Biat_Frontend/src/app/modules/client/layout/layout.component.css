@@ -1,0 +1,11 @@
+.role-display {
+  font-size: 0.875rem; /* Taille de la police petite */
+  color: gray; /* Couleur grise */
+  margin-top: 0; /* Supprime la marge supérieure */
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}

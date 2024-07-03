@@ -1,0 +1,126 @@
+<!-- Title -->
+<div class="row mb-3">
+  <div class="col-12 d-sm-flex justify-content-between align-items-center">
+    <h1 class="h3 mb-2 mb-sm-0">Liste des Clients</h1>
+    <a class="btn btn-sm btn-primary-soft mb-0" href="agent/Add_Client"
+      >Ajouter Client</a
+    >
+  </div>
+</div>
+    <div class="card bg-transparent border">
+      <!-- Card header START -->
+      <div class="card-header bg-light border-bottom">
+        <!-- Search and select START -->
+        <div class="row g-3 align-items-center justify-content-between">
+          <!-- Search bar -->
+          <div class="col-md-12">
+            <form class="rounded position-relative">
+              <input
+                class="form-control bg-transparent"
+                name="rechercheUniversite"
+                type="search"
+                placeholder="Entrez le nom de Client"
+                aria-label="Search"
+              />
+              <button
+                class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+                type="submit"
+              >
+                <i class="fas fa-search fs-6"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- Search and select END -->
+      </div>
+      <!-- Card header END -->
+      <!-- Card body START -->
+      <div >
+        <div class="card-body">
+          <!-- Table START -->
+          <div class="table-responsive border-0 rounded-3">
+            <table
+              class="table table-dark-gray align-middle p-4 mb-0 table-hover"
+            >
+              <!-- Table head -->
+              <thead>
+                <tr>
+                  <th scope="col" class="border-0 rounded-start">Nom</th>
+                  <th scope="col" class="border-0">Prenom</th>
+                  <th scope="col" class="border-0">Télephone</th>
+                  <th scope="col" class="border-0">Email</th>
+                  <th scope="col" class="border-0">CIN</th>
+                  <th scope="col" class="border-0">Date Naissance</th>
+                  <th scope="col" class="border-0">Adresse</th>
+                  <th scope="col" class="border-0">Nationalité</th>
+                  <th scope="col" class="border-0 rounded-end">Action</th>
+                </tr>
+              </thead>
+              <!-- Table body START -->
+              <tbody *ngIf="listClients.length > 0; else noData">
+                <tr *ngFor="let client of listClients">
+                  <td>
+                    <h4 class="table-responsive-title mb-0">{{client.nom}}</h4>
+                  </td>
+                  <td>
+                    <h4 class="table-responsive-title mb-0">{{client.prenom}}</h4>
+                  </td>
+                  <td>
+                    <h4 class="table-responsive-title mb-0">{{client.numeroTelephone}}</h4>
+                  </td>
+                  <td>
+                    <h4 class="table-responsive-title mb-0">{{client.email}}</h4>
+                  </td>
+                  <td>
+                    <h4 class="table-responsive-title mb-0">{{client.cin}}</h4>
+                  </td>
+                  <td>
+                    <h4 class="table-responsive-title mb-0"> {{client.dateNaissance}}</h4>
+                  </td>
+                  <td>
+                    <h4 class="table-responsive-title mb-0"> {{client.adresse}}</h4>
+                  </td>
+                  <td>
+                    <h4 class="table-responsive-title mb-0"> {{client.nationality}}</h4>
+                  </td>
+                  <td>
+                    <a
+                    (click)="updateClient(client.id)"
+                      data-bs-target="#updateNewcard"
+                      class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0">
+                      <i class="bi bi-person-badge-fill"></i>
+                    </a>
+                    <a
+                    (click)="deleteAgent(client.id)"
+                      class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title=""
+                      data-bs-original-title="Delete">
+                      <i class="bi bi-trash"></i>
+                    </a>
+                  </td>
+                </tr>
+                
+              </tbody>
+              <!-- Table body END -->
+              <tfoot *ngIf="listClients.length === 0">
+                <tr>
+                  <td colspan="9">
+                    <div class="alert alert-secondary text-center my-4" role="alert">
+                      Aucun client disponible pour le moment...
+                    </div>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- Table END -->
+        </div>
+      </div>
+    
+      <!-- All review table END -->
+    </div>
+
+
+

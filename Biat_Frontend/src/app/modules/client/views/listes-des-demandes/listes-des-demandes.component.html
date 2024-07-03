@@ -1,0 +1,112 @@
+<div class="row mb-3">
+    <div class="col-12 d-sm-flex justify-content-between align-items-center">
+        <h1 class="h3 mb-2 mb-sm-0">Mes demandes</h1>
+        <a class="btn btn-sm btn-primary-soft mb-0" href="client/Demande-cheque" >Ajouter demande</a>
+    </div>
+</div>
+<div class="card bg-transparent border">
+    <div class="card-header bg-light border-bottom">
+        <div class="row g-3 align-items-center justify-content-between">
+            <div class="col-md-12">
+                <form class="rounded position-relative">
+                    <input
+                    class="form-control bg-transparent"
+                    name="rechercheUniversite"
+                    type="search"
+                    placeholder="Entrez le id du compte"
+                    aria-label="Search"
+                    />
+                    <button
+                    class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+                    type="submit"
+                    >
+                    <i class="fas fa-search fs-6"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+<div class="card-body">
+    <!-- Table START -->
+    <div class="table-responsive border-0 rounded-3">
+      <table
+        class="table table-dark-gray align-middle p-4 mb-0 table-hover"
+      >
+        <!-- Table head -->
+        <thead>
+          <tr>
+            <th scope="col" class="border-0 rounded-start">Date de création</th>
+            <th scope="col" class="border-0">Raison</th>
+            <th scope="col" class="border-0">Nom de l'agence</th>
+            <th scope="col" class="border-0">Fax</th>
+            <th scope="col" class="border-0">codePostal</th>
+            <th scope="col" class="border-0">Status</th>
+            <th scope="col" class="border-0 rounded-end">Action</th>
+          </tr>
+        </thead>
+        <!-- Table body START -->
+        <tbody *ngIf="requests.length > 0; else noData">
+          <tr *ngFor="let request of requests">
+            <td>
+              <h4 class="table-responsive-title mb-0">{{ request.requestDate | date:'dd-MM-yyyy' }}</h4>
+            </td>
+            <td>
+              <h4 class="table-responsive-title mb-0">{{ request.reason}}</h4>
+            </td>
+            <td>
+              <h4 class="table-responsive-title mb-0">{{ request.agence.nom}}</h4>
+            </td>
+            <td>
+              <h4 class="table-responsive-title mb-0">{{ request.agence.fax}}</h4>
+            </td>
+            <td>
+              <h4 class="table-responsive-title mb-0">{{ request.agence.codePostal}}</h4>
+            </td>
+            <td>
+              <h5 class="table-responsive-title mb-0"
+                  [ngClass]="{
+                    'text-primary': request.status === 'PENDING',
+                    'text-success': request.status === 'APPROVED',
+                    'text-danger': request.status === 'REFUSED',
+                    'font-bold': true
+                  }">
+                {{ request.status }}
+              </h5>
+            </td>
+            <td>
+              <a (click)="voirDetails(request.id)" 
+              class="btn btn-info-soft btn-round me-1 mb-1 mb-md-0"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title=""
+                    data-bs-original-title="Voir les détails">
+                    <i class="bi bi-eye"></i>
+              </a>
+              <button *ngIf="canDelete(request.status)"
+              (click)="deleteDemande(request.id)"
+              class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title=""
+              data-bs-original-title="Delete"
+              [disabled]="request.status === 'APPROVED' || request.status === 'REFUSED'">
+              <i class="bi bi-trash"></i>
+            </button>
+
+            </td>
+          </tr>
+        </tbody>
+        <!-- Placeholder for no data -->
+        <tfoot *ngIf="requests.length === 0">
+          <tr>
+            <td colspan="9">
+              <div class="alert alert-secondary text-center my-4" role="alert">
+                Aucune demande disponible pour le moment...
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <!-- Table END -->
+  </div>

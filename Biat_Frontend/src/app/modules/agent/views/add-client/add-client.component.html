@@ -1,0 +1,112 @@
+<mat-stepper [linear]="isLinear" #stepper>
+    <mat-step >
+      <form >
+        <ng-template matStepLabel>Ajouter Client</ng-template>
+        <div class="text-center">
+            <img
+              src="./../../../../../assets/images/Sign up-pana.png"
+              class="h-100px mb-2"
+              alt=""
+            />
+            <h2>Créez nouveau Client !</h2>
+            <p class="lead mb-4">
+              Ravi de vous voir! Veuillez vous ajouter un nouveau Client.
+            </p>
+          </div>
+        <div>
+        <div class="button-container">
+          <button mat-button matStepperNext class="btn-inscrire" >Suivant</button>
+        </div>
+        </div>
+      </form>
+    </mat-step>   
+    <mat-step [stepControl]="secondFormGroup" label="Détails principale">
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
+                <div class="row">
+                    <div class="mb-4 col-12 col-md-6">
+                        <label for="exampleInputNom" class="form-label">Nom *</label>
+                        <div class="input-group input-group-lg">
+                          <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="fas fa-user-graduate"></i></span>
+                          <input type="text" class="form-control border-0 bg-light rounded-end ps-1" placeholder="Nom" id="exampleInputNom" formControlName="nom"/>
+                        </div>
+                    </div>
+                    <div class="mb-4 col-12 col-md-6">
+                        <label for="exampleInputNom" class="form-label">Prénom *</label>
+                        <div class="input-group input-group-lg">
+                          <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="fas fa-user-graduate"></i></span>
+                          <input type="text" class="form-control border-0 bg-light rounded-end ps-1" placeholder="Nom" id="exampleInputNom" formControlName="prenom"/>
+                        </div>
+                    </div>   
+                </div>
+                <div class="row">
+                    <div class="mb-4 col-12 col-md-6">
+                        <label for="exampleInputNom" class="form-label">Carte d'identité nationale *</label>
+                        <div class="input-group input-group-lg">
+                          <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-person-badge"></i></span>
+                          <input type="number" class="form-control border-0 bg-light rounded-end ps-1" placeholder="cin" id="exampleInputNom" formControlName="cin"/>
+                        </div>
+                    </div>
+                    <div class="mb-4 col-12 col-md-6">
+                        <label for="exampleInputNom" class="form-label">Date de naissance *</label>
+                        <div class="input-group input-group-lg">
+                          <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-calendar-date"></i></span>
+                          <input type="date" class="form-control border-0 bg-light rounded-end ps-1" placeholder="Nom" id="exampleInputNom" formControlName="dateNaissance"/>
+                        </div>
+                    </div>   
+                </div>
+                <div class="row">
+                    <div class="mb-4 col-12 col-md-6">
+                        <label for="exampleInputNom" class="form-label">Adresse *</label>
+                        <div class="input-group input-group-lg">
+                          <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-house"></i></span>
+                          <input type="text" class="form-control border-0 bg-light rounded-end ps-1" placeholder="Adresse" id="exampleInputNom" formControlName="adresse"/>
+                        </div>
+                    </div>
+                    <div class="mb-4 col-12 col-md-6">
+                        <label for="exampleInputNom" class="form-label">Nationalité *</label>
+                        <div class="input-group input-group-lg">
+                          <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-globe"></i></span>
+                          <input type="text" class="form-control border-0 bg-light rounded-end ps-1" placeholder="nationalité" id="exampleInputNom" formControlName="nationality"/>
+                        </div>
+                    </div>
+                  </div>
+                <div class="row">
+                    <div class="mb-4 col-12 col-md-6">
+                        <label for="exampleInputNom" class="form-label">Email *</label>
+                        <div class="input-group input-group-lg">
+                          <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-envelope-at"></i></span>
+                          <input type="text" class="form-control border-0 bg-light rounded-end ps-1" placeholder="email" id="exampleInputNom" formControlName="email"/>
+                        </div>
+                    </div>
+                    <div class="mb-4 col-12 col-md-6">
+                        <label for="exampleInputNom" class="form-label">Password *</label>
+                        <div class="input-group input-group-lg">
+                          <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-lock"></i></span>
+                          <input type="password" class="form-control border-0 bg-light rounded-end ps-1" placeholder="Password" id="exampleInputNom" formControlName="password"/>
+                        </div>
+                    </div>
+                </div>
+             <div class="row">
+                    <div class="mb-4 col-12 col-md-6">
+                        <label for="exampleInputImage" class="form-label">Photo de profil *</label>
+                        <div class="input-group input-group-lg">
+                          <span
+                            class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-person"></i></span>
+                          <input type="file" class="form-control border-0 bg-light rounded-end ps-1" id="exampleInputImage" (change)="onFileSelected($event)"/>
+                        </div>
+                      </div>
+                      <div class="mb-4 col-12 col-md-6">
+                        <label for="exampleInputNom" class="form-label">Numéro de télephone *</label>
+                        <div class="input-group input-group-lg">
+                          <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-telephone"></i></span>
+                          <input type="number" class="form-control border-0 bg-light rounded-end ps-1" placeholder="numéro de télephone" id="exampleInputNom" formControlName="numeroTelephone"/>
+                        </div>
+                    </div>
+                </div> 
+                <div class="button-container">
+                    <button mat-button matStepperNext class="btn-annuler" (click)="Clear()">Annuler</button>
+                    <button mat-button matStepperPrevious class="btn-inscrire" type="submit">S'inscrire</button>
+                  </div>                  
+            </form>
+    </mat-step>
+  </mat-stepper>

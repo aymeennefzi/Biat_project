@@ -1,0 +1,234 @@
+<div class="page-content-wrapper border">
+  <!-- Title -->
+  <div class="row mb-3">
+    <div class="col-12 d-sm-flex justify-content-between align-items-center">
+      <h1 class="h3 mb-2 mb-sm-0">Liste des Agents</h1>
+      <a class="btn btn-sm btn-primary-soft mb-0" href="admin/ajouter-agent"
+        >Ajouter Agent</a
+      >
+    </div>
+  </div>
+  <div class="card bg-transparent border">
+    <!-- Card header START -->
+    <div class="card-header bg-light border-bottom">
+      <!-- Search and select START -->
+      <div class="row g-3 align-items-center justify-content-between">
+        <!-- Search bar -->
+        <div class="col-md-8">
+          <form class="rounded position-relative">
+            <input
+              class="form-control bg-transparent"
+              [(ngModel)]="rechercherAgent"
+              name="rechercheUniversite"
+              type="search"
+              placeholder="Entrez le nom de l'agent"
+              aria-label="Search"
+            />
+            <button
+              class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+              type="submit"
+            >
+              <i class="fas fa-search fs-6"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- Search and select END -->
+    </div>
+    <!-- Card header END -->
+
+    <!-- Card body START -->
+    <div *ngIf="listAgents.length > 0">
+      <div class="card-body">
+        <!-- Table START -->
+        <div class="table-responsive border-0 rounded-3">
+          <table
+            class="table table-dark-gray align-middle p-4 mb-0 table-hover"
+          >
+            <!-- Table head -->
+            <thead>
+              <tr>
+                <th scope="col" class="border-0 rounded-start">Nom Agent</th>
+                <th scope="col" class="border-0">Prenom</th>
+                <th scope="col" class="border-0">numero Telephone</th>
+                <th scope="col" class="border-0">email</th>
+                <th scope="col" class="border-0">cin</th>
+                <th scope="col" class="border-0">date Naissance</th>
+                <th scope="col" class="border-0">Agence</th>
+                <th scope="col" class="border-0">Fax Agence</th>
+                <th scope="col" class="border-0 rounded-end">Action</th>
+              </tr>
+            </thead>
+            <!-- Table body START -->
+            <tbody
+              *ngFor="
+                let agent of listAgents | rechercheUniversite : rechercherAgent
+              "
+            >
+              <!-- Table row -->
+              <tr>
+                <!-- Table data -->
+                <td>
+                  <h4 class="table-responsive-title mb-0">{{ agent.nom }}</h4>
+                </td>
+
+                <!-- Table data -->
+                <td>
+                  <h4 class="table-responsive-title mb-0">
+                    {{ agent.prenom }}
+                  </h4>
+                </td>
+                <td>
+                  <h4 class="table-responsive-title mb-0">
+                    {{ agent.numeroTelephone }}
+                  </h4>
+                </td>
+                <td>
+                  <h4 class="table-responsive-title mb-0">{{ agent.email }}</h4>
+                </td>
+                <td>
+                  <h4 class="table-responsive-title mb-0">{{ agent.cin }}</h4>
+                </td>
+                <td>
+                  <h4 class="table-responsive-title mb-0">
+                    {{ agent.dateNaissance }}
+                  </h4>
+                </td>
+
+                <!-- Table data -->
+                <td>
+                  <!-- Condition pour vérifier si le foyer est associé ou non -->
+                  <span *ngIf="agent.agence !== null; else notAssociated">
+                    <h6 class="table-responsive-title mb-0">
+                      {{ agent.agence.nom }}
+                    </h6>
+                  </span>
+                  <!-- Template pour 'Non associé' -->
+                  <ng-template #notAssociated>
+                    <h4 class="badge bg-danger bg-opacity-10 text-danger">
+                      Non associé
+                    </h4>
+                  </ng-template>
+                </td>
+
+                <td>
+                  <h6 class="table-responsive-title mb-0">
+                    <h4 *ngIf="agent.agence !== null; else notAssociated">
+                      {{ agent?.agence?.fax }}
+                    </h4>
+                  </h6>
+                </td>
+
+                <!-- Table data -->
+                <td>
+                  <a
+                    data-bs-target="#updateNewcard"
+                    class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </a>
+                  <a
+                    (click)="deleteAgent(agent.id)"
+                    class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title=""
+                    data-bs-original-title="Delete"
+                  >
+                    <i class="bi bi-trash"></i>
+                  </a>
+
+                  <span
+                    *ngIf="agent.agence && agent.agence.nom; else affecterFoyer"
+                  >
+                    <!--  -->
+                    <a
+                      (click)="desaffecterAgentFromAgence(agent.id)"
+                      class="btn btn-sm btn-danger-soft mb-0"
+                      >Désaffecter</a
+                    >
+                  </span>
+
+                  <!--" -->
+                  <ng-template #affecterFoyer>
+                    <a
+                      class="btn btn-sm btn-info-soft mb-0 me-1"
+                      data-bs-toggle="modal"
+                      data-bs-target="#getNewcard"
+                      (click)="openAffectModal(agent.id)"
+                      >Affecter</a
+                    >
+                  </ng-template>
+                </td>
+              </tr>
+            </tbody>
+            <!-- Table body END -->
+          </table>
+        </div>
+        <!-- Table END -->
+      </div>
+    </div>
+    <div *ngIf="listAgents.length == 0">
+      <div class="alert alert-dark" role="alert">
+        Accun agent pour le moment
+      </div>
+    </div>
+    <!-- All review table END -->
+  </div>
+  <div
+    class="modal fade"
+    id="getNewcard"
+    tabindex="-1"
+    aria-labelledby="addNewcardLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <h5 class="modal-title text-white" id="addNewcardLabel">
+            Affecter L'agent à une agence
+          </h5>
+          <button
+            type="button"
+            class="btn btn-sm btn-light mb-0"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="row text-start g-3">
+            <div class="col-12">
+              <label class="form-label"
+                >Agence <span class="text-danger">*</span></label
+              >
+              <select
+                class="border-0 bg-light rounded-end ps-1 form-select border-0 z-index-9"
+                [(ngModel)]="selectedAgenceId"
+                name="selectedAgenceId"
+              >
+                <option value="" disabled>Selectionner une agence</option>
+                <option *ngFor="let agence of listeAgence" [value]="agence.id">
+                  {{ agence.nom }}
+                </option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="submit"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            class="btn btn-success my-0"
+            [disabled]="selectedAgenceId === null || selectedIdAgent === null"
+            (click)="affecterAgentToUniversity()"
+          >
+            Affecter
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
